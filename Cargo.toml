@@ -1,0 +1,13 @@
+[workspace]
+members = ["00-multi", "01-handcrafted"]
+resolver = "2"
+
+[workspace.package]
+name = "tedge-config-example"
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+anyhow = "*"
+serde = {version = "*", features = ["derive"]}
+toml = "*"
