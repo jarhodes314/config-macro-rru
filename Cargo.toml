@@ -8,6 +8,7 @@ version = "0.1.0"
 edition = "2021"
 
 [workspace.dependencies]
-anyhow = "*"
-serde = {version = "*", features = ["derive"]}
-toml = "*"
+anyhow = "1.0"
+serde = {version = "1.0", features = ["derive"]}
+toml = "0.8"
+regex = "1.11"

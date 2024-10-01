@@ -6,7 +6,7 @@ use serde::{Deserialize, Serialize};
 #[serde(untagged)]
 pub enum Multi<T> {
     Multi(HashMap<String, T>),
-    Single(T)
+    Single(T),
 }
 
 impl<T> Multi<T> {
@@ -27,6 +27,17 @@ impl<T> Multi<T> {
             (Self::Multi(map), Some(key)) => map.get_mut(key),
             (Self::Single(val), None) => Some(val),
             _ => None,
+        }
+    }
+
+    pub fn map_values<U>(self, f: impl Fn(T) -> U) -> Multi<U> {
+        match self {
+            Self::Multi(map) => Multi::Multi(
+                map.into_iter()
+                    .map(|(k, value)| (k.to_owned(), f(value)))
+                    .collect(),
+            ),
+            Self::Single(value) => Multi::Single(f(value)),
         }
     }
 }
