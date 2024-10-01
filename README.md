@@ -1,5 +1,7 @@
 # tedge config macros - multi-value groups demo
 
+[Solution here](https://github.com/jarhodes314/config-macro-rru/tree/solution)
+
 These are a couple of exercises to gain some intuition about the define_tedge_config! macro.
 They don't involve touching any macro code, but should give you a decent background into the
 changes that I've been making to `define_tedge_config!` to support multiple named c8y instances.
