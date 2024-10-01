@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize)]
+#[serde(untagged)]
 pub enum Multi<T> {
     Multi(HashMap<String, T>),
     Single(T)
