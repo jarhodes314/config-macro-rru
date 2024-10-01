@@ -252,7 +252,7 @@ mod tests {
         let rdr = TEdgeConfigReader::from(dto);
         assert_eq!(rdr.try_read_str(&ReadableKey::C8yUrl).unwrap(), "https://c8y.example.com");
         todo!("uncomment the assertion below when the code compiles")
-        // assert_eq!(rdr.read_str(&ReadableKey::C8yUrl(Some("cloud".into()))), "https://c8y.example.com");
+        // assert_eq!(rdr.try_read_str(&ReadableKey::C8yUrl(Some("cloud".into()))).unwrap(), "https://c8y.example.com");
     }
 
     #[test]
